@@ -6,12 +6,14 @@ import java.net.MalformedURLException;
 
 import javax.swing.JOptionPane;
 
-import org.omg.PortableInterceptor.TRANSPORT_RETRY;
 import org.teachingextensions.logo.ImageBackground;
 import org.teachingextensions.logo.Paintable;
 import org.teachingextensions.logo.Tortoise;
 
-/** Note: You will need the latest version of the TKP jar: http://school.wintrisstech.org/jars/TeachingKidsProgramming.jar **/
+/**
+ * Note: You will need the latest version of the TKP jar:
+ * http://school.wintrisstech.org/jars/TeachingKidsProgramming.jar
+ **/
 
 public class TurtleTreasureHunt implements KeyEventDispatcher {
 
@@ -48,39 +50,38 @@ public class TurtleTreasureHunt implements KeyEventDispatcher {
 		int tortoiseLocationY = Tortoise.getY();
 
 		Point point = new Point(tortoiseLocationX, tortoiseLocationY);
-		
+
 		// 5. Print out the variables for tortoiseLocationX and tortoiseLocationY
 		System.out.println(tortoiseLocationX + " " + tortoiseLocationY);
 		// 6. If tortoise is at same location as the little girl,
-		
-		// 			make the variables for tortoiseLocationX and tortoiseLocationY
 
-		if(point.distance(505,305) <= 50){
+		// make the variables for tortoiseLocationX and tortoiseLocationY
+
+		if (point.distance(505, 305) <= 50) {
 			JOptionPane.showMessageDialog(null, "Please go to the blue pirate thing");
 		}
-		
-		if(point.distance(410, 295) <= 60){
-			JOptionPane.showMessageDialog(null, "go to the skull's right eye and you will see what will happen next" + "\n"+ "\n" + "HA HA HAAAAA");
+
+		if (point.distance(410, 295) <= 60) {
+			JOptionPane.showMessageDialog(null, "go to the skull's right eye and you will see what will happen next" + "\n" + "\n" + "HA HA HAAAAA");
 		}
-		
-		if(point.distance(140, 45) <= 40){
+
+		if (point.distance(140, 45) <= 40) {
 			JOptionPane.showMessageDialog(null, "You go into the skull's eye and fall down and die, the end");
 			System.exit(0);
 		}
-		
+
 		// 6. If tortoie a pop-up tell the Tortoise where to go next
 
 		// 7. Give the user subsequent clues at different locations on the image
 		// (pirate robot, swamp, parrots, etc.)
 
-		
 	}
 
 	private void go() {
 		KeyboardFocusManager.getCurrentKeyboardFocusManager().addKeyEventDispatcher(this);
 		/*
-		 * If you want to use your own background, download the image you want, and change the following line to point to it like: new
-		 * ImageBackground("file:/Users/joonspoon/Desktop/dinosaurLand.jpg");
+		 * If you want to use your own background, download the image you want, and change the following line to point
+		 * to it like: new ImageBackground("file:/Users/joonspoon/Desktop/dinosaurLand.jpg");
 		 */
 		Paintable backgroundImage = new ImageBackground("file:/Users/League/Google Drive/league-images/treasure_hunt.jpg");
 		Tortoise.getBackgroundWindow().addPaintable(backgroundImage);
@@ -108,6 +109,3 @@ public class TurtleTreasureHunt implements KeyEventDispatcher {
 		new TurtleTreasureHunt().go();
 	}
 }
-
-
-
